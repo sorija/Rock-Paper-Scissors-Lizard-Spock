@@ -4,7 +4,6 @@ import random
 # helper functions
 
 def name_to_number(name):
-    # converts string name to number between 0 and 4
     if name == "rock":
         return 0
     elif name == "Spock":
@@ -20,7 +19,6 @@ def name_to_number(name):
 
 
 def number_to_name(number):
-    # converts number to a name
     if number == 0:
         return "rock"
     elif number == 1:
@@ -37,25 +35,14 @@ def number_to_name(number):
 def rpsls(player_choice): 
          
     print ("")
-    # prints out the message for the player's choice
     print "Player chooses" + " " + player_choice
-
-    # converts the player's choice to player_number 
     player_number = name_to_number(player_choice)
-
-    # computes random guess for comp_number 
     comp_number = random.randrange(0,5)
-
-    # converts comp_number to comp_choice 
     comp_choice = number_to_name(comp_number)
-    
-    # prints out the message for computer's choice
     print "Computer chooses" + " " + comp_choice
-
-    # computes the difference of comp_number and player_number modulo five
     diff = (comp_number - player_number) % 5
 
-    # determines and prints out the winner
+    # determines and announces the winner
     if diff == 1:
         print "Computer wins!"
     elif diff == 2:
